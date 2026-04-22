@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cinzel", ui-serif, Georgia, serif;
+  
+  --color-brand-dark: #0f0f0f;
+  --color-brand-light: #F4F0EA; /* Marble/Parchment tone */
+  --color-brand-accent: #C5A880; /* Ancient Gold / Bronze */
+  --color-brand-gray: #888888;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-light text-brand-dark font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight;
+  }
+}
+
+/* Cosmic-Soft Glitch Animation */
+@keyframes cosmic-glitch {
+  0% { text-shadow: 0.05em 0 0 rgba(197,168,128,0.5), -0.05em -0.025em 0 rgba(15,15,15,0.3); }
+  14% { text-shadow: 0.05em 0 0 rgba(197,168,128,0.5), -0.05em -0.025em 0 rgba(15,15,15,0.3); }
+  15% { text-shadow: -0.05em -0.025em 0 rgba(197,168,128,0.5), 0.025em 0.025em 0 rgba(15,15,15,0.3); }
+  49% { text-shadow: -0.05em -0.025em 0 rgba(197,168,128,0.5), 0.025em 0.025em 0 rgba(15,15,15,0.3); }
+  50% { text-shadow: 0.025em 0.05em 0 rgba(197,168,128,0.5), 0.05em 0 0 rgba(15,15,15,0.3); }
+  99% { text-shadow: 0.025em 0.05em 0 rgba(197,168,128,0.5), 0.05em 0 0 rgba(15,15,15,0.3); }
+  100% { text-shadow: -0.025em 0 0 rgba(197,168,128,0.5), -0.025em -0.025em 0 rgba(15,15,15,0.3); }
+}
+
+.hover-glitch {
+  position: relative;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.hover-glitch:hover {
+  animation: cosmic-glitch 800ms infinite ease-in-out alternate;
+  color: var(--color-brand-accent);
+}
+
+.hover-glitch .glitch-phi {
+  display: inline-block;
+  transition: all 0.5s ease;
+}
+
+.hover-glitch:hover .glitch-phi {
+  animation: float-phi 2s ease-in-out infinite;
+  text-shadow: 0 0 15px rgba(197,168,128,0.8);
+  color: var(--color-brand-dark) !important;
+}
+
+@keyframes float-phi {
+  0%, 100% { transform: translateY(0) scale(1) rotate(0deg); }
+  50% { transform: translateY(-4px) scale(1.1) rotate(5deg); }
+}
