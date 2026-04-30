@@ -12,7 +12,7 @@ export default function Manifesto() {
   const yImage = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-brand-light" id="manifesto">
+    <section ref={ref} className="relative py-24 px-6 bg-brand-light" id="manifesto">
       <div className="max-w-7xl mx-auto">
         <div className="w-full aspect-video rounded-3xl overflow-hidden relative group border border-brand-dark/10 shadow-2xl">
           <motion.img 
