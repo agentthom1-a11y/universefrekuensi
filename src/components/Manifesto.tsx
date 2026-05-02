@@ -3,7 +3,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 
-export default function Manifesto() {
+export default function Manifesto({ dict }: { dict: any }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -30,7 +30,7 @@ export default function Manifesto() {
               transition={{ duration: 1, ease: "easeOut" }}
               className="text-5xl md:text-8xl font-serif tracking-tighter text-brand-light uppercase text-center backdrop-blur-md px-12 py-6 rounded-3xl bg-brand-dark/10 border border-brand-light/20 drop-shadow-2xl"
             >
-              Reset Mindset.
+              {dict.title}
             </motion.h2>
           </div>
         </div>

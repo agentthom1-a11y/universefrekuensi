@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 
-export default function Navbar() {
+export default function Navbar({ dict }: { dict: any }) {
   return (
     <motion.nav 
       initial={{ y: -100 }}
@@ -15,12 +15,12 @@ export default function Navbar() {
           Universe<span className="text-brand-accent font-light mx-1 glitch-phi">Φ</span>Frekuensi
         </div>
         <div className="hidden md:flex items-center space-x-12 text-sm font-semibold uppercase tracking-wide text-brand-dark">
-          <a href="#manifesto" className="hover:text-brand-accent transition-colors">Manifesto</a>
-          <a href="#services" className="hover:text-brand-accent transition-colors">Pilar Kami</a>
-          <a href="#news" className="hover:text-brand-accent transition-colors">Jurnal</a>
+          <a href="#manifesto" className="hover:text-brand-accent transition-colors">{dict.manifesto}</a>
+          <a href="#services" className="hover:text-brand-accent transition-colors">{dict.services}</a>
+          <a href="#news" className="hover:text-brand-accent transition-colors">{dict.news}</a>
         </div>
         <a href="#lead-magnet" className="px-6 py-3 bg-brand-dark text-brand-accent rounded-full text-sm font-bold uppercase tracking-wide hover:bg-brand-accent hover:text-brand-dark transition-all hidden md:block">
-          Mulai Sekarang
+          {dict.cta}
         </a>
       </div>
     </motion.nav>

@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
-export default function Hero() {
+export default function Hero({ dict }: { dict: any }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -84,7 +84,7 @@ export default function Hero() {
           className="text-brand-accent font-bold uppercase tracking-widest mb-6 flex items-center space-x-3"
         >
           <span className="w-8 h-[1px] bg-brand-accent inline-block" />
-          <span>Filosofi & Ruang Nyaman</span>
+          <span>{dict.badge}</span>
         </motion.p>
         <motion.div style={{ y: textY, opacity }}>
           <motion.h1 
@@ -93,10 +93,10 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="text-[4rem] sm:text-6xl md:text-8xl lg:text-[7rem] font-serif font-medium tracking-tighter leading-[0.9] text-brand-dark max-w-5xl uppercase"
           >
-            Temukan <br /> 
-            <span className="text-brand-accent italic font-light">Ruang Sepi</span> <br/>
-            Di Tengah <br/>
-            Bisingnya Dunia.
+            {dict.title1} <br /> 
+            <span className="text-brand-accent italic font-light">{dict.title2}</span> <br/>
+            {dict.title3} <br/>
+            {dict.title4}
           </motion.h1>
           
           <motion.div
@@ -106,7 +106,7 @@ export default function Hero() {
             className="mt-12"
           >
             <a href="#lead-magnet" className="group relative inline-flex items-center justify-center px-10 py-5 bg-brand-dark text-brand-accent rounded-full overflow-hidden transition-all duration-500 hover:bg-brand-accent hover:text-brand-dark hover:shadow-[0_0_40px_rgba(197,168,128,0.4)] border border-brand-accent/20">
-              <span className="font-serif font-bold uppercase tracking-widest text-sm relative z-10">Mulai Perjalananmu</span>
+              <span className="font-serif font-bold uppercase tracking-widest text-sm relative z-10">{dict.cta}</span>
               <ArrowRight className="w-5 h-5 ml-4 relative z-10 group-hover:translate-x-2 transition-transform duration-300" />
             </a>
           </motion.div>

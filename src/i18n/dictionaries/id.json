@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "manifesto": "Manifesto",
+    "services": "Pilar Kami",
+    "news": "Jurnal",
+    "cta": "Mulai Sekarang"
+  },
+  "hero": {
+    "badge": "Filosofi & Ruang Nyaman",
+    "title1": "Temukan",
+    "title2": "Ruang Sepi",
+    "title3": "Di Tengah",
+    "title4": "Bisingnya Dunia.",
+    "cta": "Mulai Perjalananmu"
+  },
+  "stats": {
+    "stat1": "Pembaca Aktif",
+    "stat2": "Jurnal Publikasi",
+    "stat3": "Afirmasi Audio",
+    "stat4": "Kepuasan"
+  },
+  "services": {
+    "title": "Pilar",
+    "titleHighlight": "Ketenangan",
+    "desc": "Kami mengubah konsep mindfulness menjadi kebiasaan praktis yang elegan dan menenangkan.",
+    "srv1Title": "Rutinitas Pagi",
+    "srv1Desc": "Bangun niat sebelum dunia mengambil alih fokusmu.",
+    "srv2Title": "Refleksi Malam",
+    "srv2Desc": "Berdamai dengan hari ini, melepaskan beban batin.",
+    "srv3Title": "Fokus & Flow",
+    "srv3Desc": "Metode praktis untuk bekerja tanpa distraksi."
+  },
+  "manifesto": {
+    "title": "Reset Mindset."
+  },
+  "news": {
+    "all": "Semua",
+    "backToJournal": "Kembali ke Jurnal",
+    "catalog": "Katalog",
+    "newsletterTitle": "Surat",
+    "newsletterHighlight": "Elektronik.",
+    "newsletterDesc": "Dapatkan wawasan mendalam, tips eksklusif, dan akses lebih awal ke manuskrip filosofi terbaru kami. Jangan biarkan layar ini menjadi akhir perjalanan Anda.",
+    "emailLabel": "Alamat Email Tertuju",
+    "emailPlaceholder": "anda@email.com",
+    "subscribe": "Berlangganan",
+    "backToCatalog": "Kembali ke Katalog Jurnal",
+    "journalTitle": "Tulisan",
+    "journalHighlight": "Terbaru",
+    "readManuscript": "Baca Manuskrip",
+    "empty": "Tidak ada jurnal untuk saat ini.",
+    "alert": "Subscribed/Berlangganan!"
+  },
+  "leadMagnet": {
+    "badge": "Esoterik · Eksklusif",
+    "title": "Panduan",
+    "titleHighlight": "Jurnal.",
+    "desc": "30+ hari prompt refleksi ala stoikisme untuk menata ulang pikiran dan mengembalikan fokusmu di tengah kebisingan.",
+    "feature1": "#MindsetReset",
+    "feature2": "+ Audio Afirmasi",
+    "ctaTitle": "Mulai Perjalananmu",
+    "ctaTitleSuccess": "Berhasil Diklaim",
+    "ctaDesc": "Dapatkan jurnal eksklusif ini langsung ke kotak masuk email Anda. 100% bebas biaya selamanya.",
+    "ctaDescSuccess": "Jurnal panduan telah dikirimkan ke kotak masuk Anda. Silakan putuskan segala koneksi luar dan mulai membaca.",
+    "emailLabel": "Alamat Email",
+    "emailPlaceholder": "anda@email.com",
+    "btnProcessing": "Memproses...",
+    "btnDownload": "Unduh Sekarang",
+    "spamDesc": "Tanpa Spam. Kami menjaga privasi Anda.",
+    "successMsg": "Kami telah mengirimkan akses jurnal ke email Anda. Sampai jumpa di dalam ruang meditasi Anda."
+  },
+  "audioLeadMagnet": {
+    "badge": "Sonik · Ambien",
+    "title": "Frekuensi",
+    "titleHighlight": "Eterik.",
+    "desc": "Koleksi eksklusif Audio Meditasi Terpandu & Ambien Kuno untuk meresonansi ulang batin Anda menuju keheningan mutlak.",
+    "feature1": "#Soundscape",
+    "feature2": "+ Binaural Beats",
+    "ctaTitle": "Dengarkan Aksesnya",
+    "ctaTitleSuccess": "Akses Terbuka",
+    "ctaDesc": "Klaim Audio Pack Anda dan jadikan setiap sudut ruangan sebagai ruang suci yang privat.",
+    "ctaDescSuccess": "Tautan menuju galeri audio telah dikirimkan ke email Anda. Selamat menikmati harmoni.",
+    "emailLabel": "Alamat Email",
+    "emailPlaceholder": "anda@email.com",
+    "btnProcessing": "Memproses...",
+    "btnPlay": "Mulai Mendengarkan",
+    "spamDesc": "Kualitas Audio Lossless. Unduhan Instan.",
+    "successMsg": "Kami telah mengirimkan akses ke email Anda. Sampai jumpa di dalam ruang meditasi Anda."
+  },
+  "footer": {
+    "desc": "Ketenangan adalah kemewahan otentik. Temukan kembali kejernihan pikiran layaknya filsuf kuno.",
+    "navTitle": "Navigasi",
+    "nav1": "Manifesto",
+    "nav2": "Pilar Kami",
+    "nav3": "Jurnal Praktik",
+    "connTitle": "Koneksi",
+    "conn1": "Instagram",
+    "conn2": "LinkedIn",
+    "conn3": "Surat",
+    "copyright": "© 2026 Universe Frekuensi",
+    "privacy": "Privasi",
+    "terms": "Ketentuan"
+  }
+}

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, BookHeart } from "lucide-react";
 import React, { useState } from "react";
 
-export default function LeadMagnet() {
+export default function LeadMagnet({ dict }: { dict: any }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -27,7 +27,7 @@ export default function LeadMagnet() {
           {/* Vertical rail text */}
           <div className="absolute left-6 top-12 bottom-12 hidden md:flex items-center">
             <span className="font-sans font-bold text-xs uppercase tracking-[0.15em] text-brand-light/30" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
-              Esoterik · Eksklusif
+              {dict.badge}
             </span>
           </div>
 
@@ -39,19 +39,19 @@ export default function LeadMagnet() {
             className="md:pl-12 max-w-2xl relative z-10"
           >
             <h2 className="text-6xl md:text-[80px] lg:text-[112px] font-serif font-bold tracking-tighter leading-[0.85] uppercase mb-8">
-              Panduan <br/> <span className="text-brand-accent">Jurnal.</span>
+              {dict.title} <br/> <span className="text-brand-accent">{dict.titleHighlight}</span>
             </h2>
             <p className="text-xl md:text-2xl font-light text-brand-light/70 max-w-lg mb-8 leading-relaxed">
-              30+ hari prompt refleksi ala stoikisme untuk menata ulang pikiran dan mengembalikan fokusmu di tengah kebisingan.
+              {dict.desc}
             </p>
             
             {/* Feature Bubbles */}
             <div className="flex flex-wrap gap-4 mt-8">
               <span className="px-5 py-2.5 rounded-full border border-brand-light/20 text-sm font-bold uppercase tracking-wider text-brand-accent">
-                #MindsetReset
+                {dict.feature1}
               </span>
               <span className="px-5 py-2.5 rounded-full border border-brand-light/20 text-sm font-bold uppercase tracking-wider text-brand-light">
-                + Audio Afirmasi
+                {dict.feature2}
               </span>
             </div>
           </motion.div>
@@ -71,12 +71,12 @@ export default function LeadMagnet() {
             </div>
 
             <h3 className="text-3xl md:text-4xl font-serif font-bold uppercase tracking-tight mb-4 text-brand-dark">
-              {isSuccess ? "Berhasil Diklaim" : "Mulai Perjalananmu"}
+              {isSuccess ? dict.ctaTitleSuccess : dict.ctaTitle}
             </h3>
             <p className="text-brand-dark/70 font-medium mb-12">
               {isSuccess 
-                ? "Jurnal panduan telah dikirimkan ke kotak masuk Anda. Silakan putuskan segala koneksi luar dan mulai membaca." 
-                : "Dapatkan jurnal eksklusif ini langsung ke kotak masuk email Anda. 100% bebas biaya selamanya."}
+                ? dict.ctaDescSuccess 
+                : dict.ctaDesc}
             </p>
 
             <AnimatePresence mode="wait">
@@ -91,11 +91,11 @@ export default function LeadMagnet() {
                 >
                   <div className="relative group">
                     <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/50 absolute -top-6 left-0 transition-colors group-focus-within:text-brand-accent">
-                      Alamat Email
+                      {dict.emailLabel}
                     </label>
                     <input 
                       type="email" 
-                      placeholder="anda@email.com" 
+                      placeholder={dict.emailPlaceholder} 
                       className="w-full bg-transparent border-b-2 border-brand-dark/20 py-3 text-2xl font-bold focus:outline-none focus:border-brand-accent transition-colors placeholder:text-brand-dark/20 text-brand-dark disabled:opacity-50"
                       required
                       disabled={isSubmitting}
@@ -108,7 +108,7 @@ export default function LeadMagnet() {
                     className="group relative flex items-center justify-between w-full p-6 mt-4 border border-brand-dark rounded-none bg-brand-dark text-brand-accent hover:bg-brand-accent hover:border-brand-accent hover:text-brand-dark transition-all duration-500 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span className="font-serif font-bold uppercase tracking-widest text-lg relative z-10">
-                      {isSubmitting ? "Memproses..." : "Unduh Sekarang"}
+                      {isSubmitting ? dict.btnProcessing : dict.btnDownload}
                     </span>
                     <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
                       {isSubmitting ? (
@@ -120,7 +120,7 @@ export default function LeadMagnet() {
                   </button>
                   
                   <p className="text-[11px] font-bold uppercase tracking-widest text-brand-dark/50 text-center lg:text-left">
-                    Tanpa Spam. Kami menjaga privasi Anda.
+                    {dict.spamDesc}
                   </p>
                 </motion.form>
               ) : (
@@ -134,7 +134,7 @@ export default function LeadMagnet() {
                     <span className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent text-brand-dark flex items-center justify-center">
                       ✓
                     </span>
-                    <span>Kami telah mengirimkan akses jurnal ke email Anda. Sampai jumpa di dalam ruang meditasi Anda.</span>
+                    <span>{dict.successMsg}</span>
                   </p>
                 </motion.div>
               )}

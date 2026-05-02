@@ -3,11 +3,11 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
-export default function Services() {
+export default function Services({ dict }: { dict: any }) {
   const services = [
-    { title: "Rutinitas Pagi", desc: "Bangun niat sebelum dunia mengambil alih fokusmu." },
-    { title: "Refleksi Malam", desc: "Berdamai dengan hari ini, melepaskan beban batin." },
-    { title: "Fokus & Flow", desc: "Metode praktis untuk bekerja tanpa distraksi." },
+    { title: dict.srv1Title, desc: dict.srv1Desc },
+    { title: dict.srv2Title, desc: dict.srv2Desc },
+    { title: dict.srv3Title, desc: dict.srv3Desc },
   ];
 
   return (
@@ -33,10 +33,10 @@ export default function Services() {
           className="flex flex-col md:flex-row justify-between items-start mb-20 gap-8"
         >
           <h2 className="text-4xl md:text-6xl font-serif font-bold tracking-tighter uppercase max-w-2xl px-4 lg:px-0">
-            Pilar <br/><span className="text-brand-accent italic font-light drop-shadow-sm">Ketenangan</span>
+            {dict.title} <br/><span className="text-brand-accent italic font-light drop-shadow-sm">{dict.titleHighlight}</span>
           </h2>
           <p className="text-brand-dark/80 font-medium max-w-sm text-lg leading-relaxed mix-blend-multiply px-4 lg:px-0">
-            Kami mengubah konsep mindfulness menjadi kebiasaan praktis yang elegan dan menenangkan.
+            {dict.desc}
           </p>
         </motion.div>
 

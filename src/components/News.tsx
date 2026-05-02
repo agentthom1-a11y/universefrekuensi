@@ -130,12 +130,12 @@ const allNews = [
   }
 ];
 
-export default function News() {
-  const categories = ["Semua", ...Array.from(new Set(allNews.map(item => item.cat)))];
-  const [selectedCategory, setSelectedCategory] = useState("Semua");
+export default function News({ dict }: { dict: any }) {
+  const categories = [dict.all, ...Array.from(new Set(allNews.map(item => item.cat)))];
+  const [selectedCategory, setSelectedCategory] = useState(dict.all);
   const [activeArticle, setActiveArticle] = useState<typeof allNews[0] | null>(null);
 
-  const filteredNews = selectedCategory === "Semua" 
+  const filteredNews = selectedCategory === dict.all 
     ? allNews 
     : allNews.filter(item => item.cat === selectedCategory);
 
@@ -159,11 +159,11 @@ export default function News() {
                   className="sticky top-6 z-50 mb-12 flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-brand-light/60 hover:text-brand-accent transition-colors"
                 >
                   <ArrowRight className="w-5 h-5 rotate-180" />
-                  <span>Kembali ke Jurnal</span>
+                  <span>{dict.backToJournal}</span>
                 </button>
 
                 <div className="flex items-center space-x-4 mb-8">
-                  <span className="font-serif text-brand-accent text-xl italic drop-shadow-sm">Katalog {activeArticle.id < 10 ? `0${activeArticle.id}` : activeArticle.id}</span>
+                  <span className="font-serif text-brand-accent text-xl italic drop-shadow-sm">{dict.catalog} {activeArticle.id < 10 ? `0${activeArticle.id}` : activeArticle.id}</span>
                   <span className="w-12 h-[1px] bg-brand-light/20" />
                   <span className="text-xs uppercase tracking-[0.2em] font-bold text-brand-light/70">{activeArticle.cat}</span>
                 </div>
@@ -187,28 +187,28 @@ export default function News() {
                   <div className="flex flex-col md:flex-row gap-12 items-center relative z-10">
                     <div className="flex-1 text-center md:text-left">
                       <h3 className="text-3xl md:text-5xl font-serif font-bold uppercase tracking-tight mb-4 text-brand-light">
-                        Surat <span className="text-brand-accent italic">Elektronik.</span>
+                        {dict.newsletterTitle} <span className="text-brand-accent italic">{dict.newsletterHighlight}</span>
                       </h3>
                       <p className="text-brand-light/60 font-medium leading-relaxed max-w-sm mx-auto md:mx-0">
-                        Dapatkan wawasan mendalam, tips eksklusif, dan akses lebih awal ke manuskrip filosofi terbaru kami. Jangan biarkan layar ini menjadi akhir perjalanan Anda.
+                        {dict.newsletterDesc}
                       </p>
                     </div>
 
                     <div className="w-full md:w-auto flex-1">
-                      <form className="relative group flex flex-col sm:flex-row gap-4 w-full" onSubmit={(e) => { e.preventDefault(); alert("Subscribed/Berlangganan!"); }}>
+                      <form className="relative group flex flex-col sm:flex-row gap-4 w-full" onSubmit={(e) => { e.preventDefault(); alert(dict.alert); }}>
                         <div className="relative flex-1">
                           <label className="text-[10px] font-bold uppercase tracking-widest text-brand-light/40 absolute -top-5 left-0 transition-colors group-focus-within:text-brand-accent">
-                            Alamat Email Tertuju
+                            {dict.emailLabel}
                           </label>
                           <input 
                             type="email" 
-                            placeholder="anda@email.com" 
+                            placeholder={dict.emailPlaceholder} 
                             className="w-full bg-transparent border-b-2 border-brand-light/20 py-3 text-lg font-bold focus:outline-none focus:border-brand-accent transition-colors placeholder:text-brand-light/20 text-brand-light"
                             required
                           />
                         </div>
                         <button type="submit" className="flex items-center justify-center px-8 py-3 bg-brand-light text-brand-dark rounded-none font-bold uppercase tracking-widest text-xs hover:bg-brand-accent hover:text-brand-dark transition-colors duration-300">
-                          Berlangganan
+                          {dict.subscribe}
                         </button>
                       </form>
                     </div>
@@ -221,7 +221,7 @@ export default function News() {
                     className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-widest text-brand-accent hover:text-brand-light transition-colors"
                   >
                     <ArrowRight className="w-5 h-5 rotate-180" />
-                    <span>Kembali ke Katalog Jurnal</span>
+                    <span>{dict.backToCatalog}</span>
                   </button>
                 </div>
               </div>
@@ -246,7 +246,7 @@ export default function News() {
               >
                 <h2 className="text-6xl md:text-[90px] font-serif font-bold tracking-tighter uppercase leading-none self-start relative z-10 w-full mb-12 border-b border-brand-light/10 pb-8">
                   <span className="text-brand-light/10 absolute -top-8 left-0 text-8xl md:text-[140px] pointer-events-none tracking-widest whitespace-nowrap">JURNAL</span>
-                  Tulisan <br/><span className="text-brand-accent">Terbaru</span>
+                  {dict.journalTitle} <br/><span className="text-brand-accent">{dict.journalHighlight}</span>
                 </h2>
                 
                 <div className="flex flex-wrap gap-4 w-full uppercase tracking-[0.2em] text-[10px] font-bold">
@@ -285,7 +285,7 @@ export default function News() {
                       {/* The Content */}
                       <div className={`flex-1 flex flex-col justify-center ${index % 2 === 1 ? 'md:order-2' : 'md:order-1'}`}>
                         <div className="flex items-center space-x-4 mb-6">
-                          <span className="font-serif text-brand-light/30 text-xl italic drop-shadow-sm">Katalog {item.id < 10 ? `0${item.id}` : item.id}</span>
+                          <span className="font-serif text-brand-light/30 text-xl italic drop-shadow-sm">{dict.catalog} {item.id < 10 ? `0${item.id}` : item.id}</span>
                           <span className="w-12 h-[1px] bg-brand-light/20" />
                           <span className="text-xs uppercase tracking-[0.2em] font-bold text-brand-accent">{item.cat}</span>
                         </div>
@@ -298,7 +298,7 @@ export default function News() {
                           <span className="w-12 h-12 rounded-full border border-brand-light/20 flex items-center justify-center group-hover:border-brand-accent group-hover:bg-brand-accent group-hover:text-brand-dark transition-all duration-700 shadow-sm">
                             <ArrowUpRight className="w-5 h-5 group-hover:animate-pulse group-hover:rotate-12 transition-transform" />
                           </span>
-                          <span>Baca Manuskrip</span>
+                          <span>{dict.readManuscript}</span>
                         </div>
                       </div>
 
@@ -322,7 +322,7 @@ export default function News() {
                   animate={{ opacity: 1 }} 
                   className="py-20 text-center border border-dashed border-brand-light/20 rounded-2xl"
                 >
-                  <p className="text-lg font-serif italic text-brand-light/60">Tidak ada jurnal untuk saat ini.</p>
+                  <p className="text-lg font-serif italic text-brand-light/60">{dict.empty}</p>
                 </motion.div>
               )}
             </motion.div>

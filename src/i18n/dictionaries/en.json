@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "manifesto": "Manifesto",
+    "services": "Our Pillars",
+    "news": "Journal",
+    "cta": "Start Now"
+  },
+  "hero": {
+    "badge": "Philosophy & Comfort Zone",
+    "title1": "Find",
+    "title2": "Quiet Space",
+    "title3": "Amidst",
+    "title4": "The World's Noise.",
+    "cta": "Begin Your Journey"
+  },
+  "stats": {
+    "stat1": "Active Readers",
+    "stat2": "Published Journals",
+    "stat3": "Audio Affirmations",
+    "stat4": "Satisfaction"
+  },
+  "services": {
+    "title": "Pillars of",
+    "titleHighlight": "Tranquility",
+    "desc": "We transform the concept of mindfulness into elegant and calming practical habits.",
+    "srv1Title": "Morning Routine",
+    "srv1Desc": "Set intentions before the world takes over your focus.",
+    "srv2Title": "Evening Reflection",
+    "srv2Desc": "Make peace with today, letting go of inner burdens.",
+    "srv3Title": "Focus & Flow",
+    "srv3Desc": "Practical methods for working without distractions."
+  },
+  "manifesto": {
+    "title": "Mindset Reset."
+  },
+  "news": {
+    "all": "All",
+    "backToJournal": "Back to Journal",
+    "catalog": "Catalog",
+    "newsletterTitle": "Electronic",
+    "newsletterHighlight": "Mail.",
+    "newsletterDesc": "Get deep insights, exclusive tips, and early access to our latest philosophical manuscripts. Don't let this screen be the end of your journey.",
+    "emailLabel": "Destination Email Address",
+    "emailPlaceholder": "you@email.com",
+    "subscribe": "Subscribe",
+    "backToCatalog": "Back to Journal Catalog",
+    "journalTitle": "Latest",
+    "journalHighlight": "Writings",
+    "readManuscript": "Read Manuscript",
+    "empty": "No journals available at the moment.",
+    "alert": "Subscribed!"
+  },
+  "leadMagnet": {
+    "badge": "Esoteric · Exclusive",
+    "title": "Journal",
+    "titleHighlight": "Guide.",
+    "desc": "30+ days of stoicism-style reflection prompts to reset your mind and restore focus amidst the noise.",
+    "feature1": "#MindsetReset",
+    "feature2": "+ Audio Affirmations",
+    "ctaTitle": "Begin Your Journey",
+    "ctaTitleSuccess": "Successfully Claimed",
+    "ctaDesc": "Get this exclusive journal directly to your email inbox. 100% free forever.",
+    "ctaDescSuccess": "The guide journal has been sent to your inbox. Please disconnect from all external ties and begin reading.",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "you@email.com",
+    "btnProcessing": "Processing...",
+    "btnDownload": "Download Now",
+    "spamDesc": "No Spam. We protect your privacy.",
+    "successMsg": "We have sent the journal access to your email. See you in your meditation space."
+  },
+  "audioLeadMagnet": {
+    "badge": "Sonic · Ambient",
+    "title": "Etheric",
+    "titleHighlight": "Frequency.",
+    "desc": "An exclusive collection of Guided Meditation & Ancient Ambient Audios to resonate your inner self toward absolute silence.",
+    "feature1": "#Soundscape",
+    "feature2": "+ Binaural Beats",
+    "ctaTitle": "Listen Now",
+    "ctaTitleSuccess": "Access Granted",
+    "ctaDesc": "Claim your Audio Pack and turn any corner of the room into a private sacred space.",
+    "ctaDescSuccess": "A link to the audio gallery has been sent to your email. Enjoy the harmony.",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "you@email.com",
+    "btnProcessing": "Processing...",
+    "btnPlay": "Start Listening",
+    "spamDesc": "Lossless Audio Quality. Instant Download.",
+    "successMsg": "We have sent access to your email. See you in your meditation space."
+  },
+  "footer": {
+    "desc": "Tranquility is an authentic luxury. Rediscover clarity of mind like ancient philosophers.",
+    "navTitle": "Navigation",
+    "nav1": "Manifesto",
+    "nav2": "Our Pillars",
+    "nav3": "Practice Journal",
+    "connTitle": "Connection",
+    "conn1": "Instagram",
+    "conn2": "LinkedIn",
+    "conn3": "Mail",
+    "copyright": "© 2026 Universe Frekuensi",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  }
+}

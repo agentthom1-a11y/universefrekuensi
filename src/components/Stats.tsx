@@ -2,12 +2,12 @@
 
 import { motion } from "motion/react";
 
-export default function Stats() {
+export default function Stats({ dict }: { dict: any }) {
   const stats = [
-    { label: "Pembaca Aktif", value: "10k+" },
-    { label: "Jurnal Publikasi", value: "100+" },
-    { label: "Afirmasi Audio", value: "50+" },
-    { label: "Kepuasan", value: "99%" },
+    { label: dict.stat1, value: "10k+" },
+    { label: dict.stat2, value: "100+" },
+    { label: dict.stat3, value: "50+" },
+    { label: dict.stat4, value: "99%" },
   ];
 
   return (

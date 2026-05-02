@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, PlayCircle } from "lucide-react";
 import React, { useState } from "react";
 
-export default function AudioLeadMagnet() {
+export default function AudioLeadMagnet({ dict }: { dict: any }) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
@@ -27,7 +27,7 @@ export default function AudioLeadMagnet() {
           {/* Vertical rail text */}
           <div className="absolute right-6 top-12 bottom-12 hidden md:flex items-center">
             <span className="font-sans font-bold text-xs uppercase tracking-[0.15em] text-brand-dark/30" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
-              Sonik · Ambien
+              {dict.badge}
             </span>
           </div>
 
@@ -39,19 +39,19 @@ export default function AudioLeadMagnet() {
             className="md:pr-12 max-w-2xl relative z-10 lg:ml-auto"
           >
             <h2 className="text-6xl md:text-[80px] lg:text-[112px] font-serif font-bold tracking-tighter leading-[0.85] uppercase mb-8">
-              Frekuensi <br/> <span className="text-brand-accent drop-shadow-sm">Eterik.</span>
+              {dict.title} <br/> <span className="text-brand-accent drop-shadow-sm">{dict.titleHighlight}</span>
             </h2>
             <p className="text-xl md:text-2xl font-light text-brand-dark/80 max-w-lg mb-8 leading-relaxed">
-              Koleksi eksklusif Audio Meditasi Terpandu & Ambien Kuno untuk meresonansi ulang batin Anda menuju keheningan mutlak.
+              {dict.desc}
             </p>
             
             {/* Feature Bubbles */}
             <div className="flex flex-wrap gap-4 mt-8">
               <span className="px-5 py-2.5 rounded-full border border-brand-dark/20 text-sm font-bold uppercase tracking-wider text-brand-dark">
-                #Soundscape
+                {dict.feature1}
               </span>
               <span className="px-5 py-2.5 rounded-full border border-brand-accent/40 text-sm font-bold uppercase tracking-wider text-brand-accent bg-brand-dark shadow-sm">
-                + Binaural Beats
+                {dict.feature2}
               </span>
             </div>
           </motion.div>
@@ -72,12 +72,12 @@ export default function AudioLeadMagnet() {
             </div>
 
             <h3 className="text-3xl md:text-4xl font-serif font-bold uppercase tracking-tight mb-4 text-brand-light">
-              {isSuccess ? "Akses Terbuka" : "Dengarkan Aksesnya"}
+              {isSuccess ? dict.ctaTitleSuccess : dict.ctaTitle}
             </h3>
             <p className="text-brand-light/60 font-medium mb-12">
               {isSuccess 
-                ? "Tautan menuju galeri audio telah dikirimkan ke email Anda. Selamat menikmati harmoni." 
-                : "Klaim Audio Pack Anda dan jadikan setiap sudut ruangan sebagai ruang suci yang privat."}
+                ? dict.ctaDescSuccess 
+                : dict.ctaDesc}
             </p>
 
             <AnimatePresence mode="wait">
@@ -92,11 +92,11 @@ export default function AudioLeadMagnet() {
                 >
                   <div className="relative group">
                     <label className="text-xs font-bold uppercase tracking-widest text-brand-light/50 absolute -top-6 left-0 transition-colors group-focus-within:text-brand-accent">
-                      Alamat Email
+                      {dict.emailLabel}
                     </label>
                     <input 
                       type="email" 
-                      placeholder="anda@email.com" 
+                      placeholder={dict.emailPlaceholder} 
                       className="w-full bg-transparent border-b-2 border-brand-light/20 py-3 text-2xl font-bold focus:outline-none focus:border-brand-accent transition-colors placeholder:text-brand-light/20 text-brand-light disabled:opacity-50"
                       required
                       disabled={isSubmitting}
@@ -109,7 +109,7 @@ export default function AudioLeadMagnet() {
                     className="group relative flex items-center justify-between w-full p-6 mt-4 border border-brand-accent rounded-none bg-transparent text-brand-accent hover:bg-brand-accent hover:text-brand-dark transition-all duration-500 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span className="font-serif font-bold uppercase tracking-widest text-lg relative z-10">
-                      {isSubmitting ? "Memproses..." : "Mulai Mendengarkan"}
+                      {isSubmitting ? dict.btnProcessing : dict.btnPlay}
                     </span>
                     <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
                       {isSubmitting ? (
@@ -121,7 +121,7 @@ export default function AudioLeadMagnet() {
                   </button>
 
                   <p className="text-[11px] font-bold uppercase tracking-widest text-brand-light/50 text-center lg:text-left">
-                    Kualitas Audio Lossless. Unduhan Instan.
+                    {dict.spamDesc}
                   </p>
                 </motion.form>
               ) : (
@@ -135,7 +135,7 @@ export default function AudioLeadMagnet() {
                     <span className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent text-brand-dark flex items-center justify-center">
                       ✓
                     </span>
-                    <span>Kami telah mengirimkan akses ke email Anda. Sampai jumpa di dalam ruang meditasi Anda.</span>
+                    <span>{dict.successMsg}</span>
                   </p>
                 </motion.div>
               )}
