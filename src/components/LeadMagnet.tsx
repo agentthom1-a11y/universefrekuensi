@@ -2,21 +2,16 @@
 
 import { motion, AnimatePresence } from "motion/react";
 import { ArrowRight, BookHeart } from "lucide-react";
-import React, { useState } from "react";
+import React from "react";
 
-export default function LeadMagnet({ dict }: { dict: any }) {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSuccess, setIsSuccess] = useState(false);
+import { useActionState } from "react";
+import { claimLeadMagnet } from "@/app/actions";
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-    }, 1500);
-  };
+import { LeadMagnetDictionary } from "@/types/dictionary";
+
+export default function LeadMagnet({ dict }: { dict: LeadMagnetDictionary }) {
+  const [state, formAction, isPending] = useActionState(claimLeadMagnet, null);
+  const isSuccess = state?.success;
 
   return (
     <section id="lead-magnet" className="bg-brand-light border-y border-brand-dark/10">
@@ -87,31 +82,33 @@ export default function LeadMagnet({ dict }: { dict: any }) {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   className="flex flex-col gap-8 w-full" 
-                  onSubmit={handleSubmit}
+                  action={formAction}
                 >
+                  <input type="hidden" name="type" value="journal" />
                   <div className="relative group">
                     <label className="text-xs font-bold uppercase tracking-widest text-brand-dark/50 absolute -top-6 left-0 transition-colors group-focus-within:text-brand-accent">
                       {dict.emailLabel}
                     </label>
                     <input 
                       type="email" 
+                      name="email"
                       placeholder={dict.emailPlaceholder} 
                       className="w-full bg-transparent border-b-2 border-brand-dark/20 py-3 text-2xl font-bold focus:outline-none focus:border-brand-accent transition-colors placeholder:text-brand-dark/20 text-brand-dark disabled:opacity-50"
                       required
-                      disabled={isSubmitting}
+                      disabled={isPending}
                     />
                   </div>
                   
                   <button 
                     type="submit" 
-                    disabled={isSubmitting}
+                    disabled={isPending}
                     className="group relative flex items-center justify-between w-full p-6 mt-4 border border-brand-dark rounded-none bg-brand-dark text-brand-accent hover:bg-brand-accent hover:border-brand-accent hover:text-brand-dark transition-all duration-500 overflow-hidden disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     <span className="font-serif font-bold uppercase tracking-widest text-lg relative z-10">
-                      {isSubmitting ? dict.btnProcessing : dict.btnDownload}
+                      {isPending ? dict.btnProcessing : dict.btnDownload}
                     </span>
                     <div className="w-12 h-12 rounded-full border border-current flex items-center justify-center relative z-10 group-hover:scale-110 transition-transform">
-                      {isSubmitting ? (
+                      {isPending ? (
                         <div className="w-5 h-5 border-2 border-brand-accent border-t-transparent rounded-full animate-spin" />
                       ) : (
                         <ArrowRight className="w-5 h-5" />

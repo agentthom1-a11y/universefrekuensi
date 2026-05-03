@@ -4,7 +4,11 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 
-export default function Hero({ dict }: { dict: any }) {
+import Image from "next/image";
+
+import { Dictionary } from "@/types/dictionary";
+
+export default function Hero({ dict }: { dict: Dictionary }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -32,10 +36,13 @@ export default function Hero({ dict }: { dict: any }) {
         style={{ y: deepBackgroundY, scale: deepBackgroundScale }}
         className="absolute right-[10%] md:right-[20%] bottom-0 top-[10%] w-[90%] md:w-[70%] lg:w-[60%] opacity-10 pointer-events-none origin-bottom mix-blend-multiply blur-[2px]"
       >
-        <img 
+        <Image 
           src="/hero_deep.png" 
           alt="Deep Background Ancient Character"
-          className="w-full h-full object-cover object-center grayscale contrast-125 brightness-110"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center grayscale contrast-125 brightness-110"
           style={{ maskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 0%, transparent 70%)" }}
         />
       </motion.div>
@@ -45,10 +52,13 @@ export default function Hero({ dict }: { dict: any }) {
         style={{ y: backgroundY, scale: backgroundScale }}
         className="absolute right-0 bottom-0 top-0 w-[80%] md:w-[60%] lg:w-[50%] opacity-20 md:opacity-40 pointer-events-none origin-bottom mix-blend-multiply"
       >
-        <img 
+        <Image 
           src="/logo.jpeg" 
           alt="Ancient Greek Statue"
-          className="w-full h-full object-cover object-right grayscale contrast-125 brightness-110"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 50vw"
+          className="object-cover object-right grayscale contrast-125 brightness-110"
           style={{ maskImage: "linear-gradient(to right, transparent, black 80%)", WebkitMaskImage: "linear-gradient(to right, transparent, black 80%)" }}
         />
       </motion.div>

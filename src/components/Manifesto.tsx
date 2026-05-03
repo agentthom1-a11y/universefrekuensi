@@ -2,8 +2,11 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import Image from "next/image";
 
-export default function Manifesto({ dict }: { dict: any }) {
+import { Dictionary } from "@/types/dictionary";
+
+export default function Manifesto({ dict }: { dict: Dictionary }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -15,12 +18,15 @@ export default function Manifesto({ dict }: { dict: any }) {
     <section ref={ref} className="relative py-24 px-6 bg-brand-light" id="manifesto">
       <div className="max-w-7xl mx-auto">
         <div className="w-full aspect-video rounded-3xl overflow-hidden relative group border border-brand-dark/10 shadow-2xl">
-          <motion.img 
-            style={{ y: yImage, scale: 1.1 }}
-            src="/manifesto.png" 
-            alt="Ancient Philosophy" 
-            className="w-full h-full object-cover origin-center grayscale filter contrast-125 sepia-[0.3]"
-          />
+          <motion.div style={{ y: yImage, scale: 1.1 }} className="absolute inset-0">
+            <Image 
+              src="/manifesto.png" 
+              alt="Ancient Philosophy" 
+              fill
+              sizes="100vw"
+              className="object-cover origin-center grayscale filter contrast-125 sepia-[0.3]"
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-brand-dark/40 flex items-center justify-center mix-blend-multiply transition-colors group-hover:bg-brand-dark/20" />
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
             <motion.h2 

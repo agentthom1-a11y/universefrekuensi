@@ -48,7 +48,66 @@
     "journalHighlight": "Writings",
     "readManuscript": "Read Manuscript",
     "empty": "No journals available at the moment.",
-    "alert": "Subscribed!"
+    "alert": "Subscribed!",
+    "articles": [
+      {
+        "id": 1,
+        "title": "How to Calm Your Mind During Overthinking",
+        "cat": "Tranquility",
+        "img": "/blog1.png",
+        "desc": "A simple guide to calming the mind during overthinking with breath, body awareness, and small grounding steps.",
+        "content": [
+          "In a world that keeps moving, stopping for a moment is not a sign of weakness, but an act of resistance that requires absolute courage. This writing is a corridor towards mental cleansing.",
+          "There are times when the mind feels too crowded. One thing is thought over and over again, then develops into many possibilities, many fears, and many scenarios that may not necessarily happen. The body is here, but the mind seems to be running everywhere. This is what we often call overthinking.",
+          "The problem is, overthinking doesn't always come because we are weak. Sometimes it arises because we have held the burden for too long, too often thought about everything alone, or were too afraid of making mistakes. The mind then tries to protect us in a way that is actually exhausting.",
+          "The first step to calming overthinking is not to force the mind to be quiet. In fact, the more it is fought, the louder it often becomes. What is more helpful is to return to the body.",
+          "Try to breathe slowly. Feel the air coming in and out. Place one hand on your chest or stomach. Signal to your body that you are safe at this moment. Not safe because all problems are solved, but safe because you are present for yourself.",
+          "After that, stop for a moment from the big questions. Don't immediately ask, 'How will all this end?' Replace it with a gentler question: 'What am I actually feeling right now?' Sometimes overthinking covers up unrecognized emotions. Behind a noisy mind, there could be fear, sadness, anger, disappointment, or fatigue.",
+          "Write down what you feel without having to be neat. It doesn't have to be beautiful. It doesn't have to be right. Just write: 'I'm afraid...', 'I'm confused...', 'I'm tired...', 'I'm disappointed...'. When emotions are given space, the mind usually starts to soften.",
+          "Then, limit your focus. When overthinking comes, the mind often wants to solve everything at once. Yet all we need is just the next single step. Not all the answers. Just one small step. Maybe drink water. Maybe take a shower. Maybe send one important message. Maybe rest and sleep earlier.",
+          "Tranquility doesn't always come from big answers. Sometimes it comes from a simple decision to stop dragging yourself everywhere and return to this moment.",
+          "Remember, you don't have to be okay right away. You only need to be a little more present than before. From there, the mind will slowly learn that not everything has to be thought out until the end of the night."
+        ],
+        "footer": "When your mind feels full, return first to your breath. Sometimes tranquility is not found outside, but when you stop leaving yourself behind."
+      },
+      {
+        "id": 2,
+        "title": "Mental Block: Why Do You Feel Stuck?",
+        "cat": "Philosophy",
+        "img": "/blog2.png",
+        "desc": "Identify what a mental block is, how it is formed, and how to release it slowly with awareness and small actions.",
+        "content": [
+          "Ever felt like you want to move forward, but there's always something holding you back? That's what is often felt as a mental block.",
+          "A mental block is not always about being lazy. Often, it is a form of old protection that is still active within. Maybe you once failed and felt deeply ashamed. Maybe you were used to being criticized until you were afraid of being wrong. Maybe you grew up with the belief that you had to be perfect to be worthy of appreciation. All those experiences can form an inner pattern that makes you stop before you really move.",
+          "The problem is, this pattern often runs silently. From the outside, it looks like a lack of discipline. Yet inside, there's a conflict: one part of you wants to grow, while another part is afraid of the consequences of change.",
+          "To release a mental block, you don't have to force yourself to be brave overnight. What is needed first is awareness. Ask honestly: 'What am I actually afraid of if I succeed?' or 'What am I afraid of if I fail?'",
+          "Sometimes the answer is surprising. Some people are afraid of being seen. Some are afraid they won't be able to maintain the results. Some are afraid of being rejected. Some are also afraid of being different from their surroundings.",
+          "After recognizing the fear, don't be in a hurry to judge. That fear once had a reason. Say in your heart: 'I understand why I feel like this.' This acceptance doesn't make you weak. In fact, this is the first step so that you no longer war with yourself.",
+          "Then, shrink the steps. A mental block often feels big because your target feels too big. If writing a whole book feels daunting, start with one paragraph. If opening a business feels heavy, start with one clearly written idea. If speaking in front of a camera feels difficult, start by recording one minute without having to upload it.",
+          "Small movements provide new evidence to your inner system: I can move without falling apart. I can start without having to be perfect.",
+          "In the end, releasing a mental block is not about becoming a new person. It's about stopping living under the control of old fears. You don't have to be without fear. You only need to learn to step even though that fear is still there."
+        ],
+        "footer": "Sometimes what holds you back is not a lack of ability, but an old wound that hasn't been talked to. When you become aware, accept, and move slowly, the path starts to open."
+      },
+      {
+        "id": 3,
+        "title": "Manifestation is Not Magic: Uniting Intent, Emotion, and Action",
+        "cat": "Practice Journal",
+        "img": "/blog3.png",
+        "desc": "Manifestation is not just wishing. Learn how to align intent, emotion, belief, and action in everyday life.",
+        "content": [
+          "Manifestation is not just wishing. It is a process of aligning what you want with what you feel, what you believe, and what you do every day.",
+          "Many people are interested in manifestation because they want their lives to change. That's natural. We all have desires: healthier relationships, a calmer life, better fortune, or a clearer direction in life. However, manifestation is often misunderstood as if it's enough to wish strongly, then everything comes on its own.",
+          "Intent is the beginning. You need to know honestly what you actually want. Not because others think it's great, but because it is truly aligned with your heart. A clear intent provides direction. Without direction, our energy is easily scattered.",
+          "But intent alone is not enough. Emotion also plays a role. Often someone says they want to live calmly, but every day they continue to live in a hurried mode, comparing themselves, and refusing to rest. Or someone wants a healthy relationship, but secretly still believes they are hard to love. This is where we learn that what we feel consistently affects how we are present in life.",
+          "Then there's belief. Not empty belief, but belief born from a healthier relationship with oneself. Beliefs like, 'I am allowed to grow,' 'I deserve to receive good things,' or 'I can go through this process slowly.' Such beliefs make actions feel lighter because the heart is not constantly fighting your own steps.",
+          "And of course, action remains important. Healthy manifestation does not separate the inner self and reality. You may write affirmations, pray, meditate, or create a vision board. But after that, there are still steps that need to be taken. Sending a message. Making a plan. Arranging routines. Learning something new. Making a decision. Closing old patterns that are no longer aligned.",
+          "Manifestation is not about forcing the universe to follow our will. Deeper than that, it is a practice to become a clearer, more aware, and more ready version of ourselves to receive the life we are building.",
+          "When your intent is clear, your emotions are more stable, your beliefs are healthier, and your actions are consistent, life starts to move in a different way. Not because everything is instant, but because you are no longer walking divided within."
+        ],
+        "footer": "Manifestation is not about waiting for a miracle to fall from the sky. It begins when yourself, your heart, and your steps are in the same direction."
+      }
+    ]
   },
   "leadMagnet": {
     "badge": "Esoteric · Exclusive",
@@ -99,5 +158,16 @@
     "copyright": "© 2026 Universe Frekuensi",
     "privacy": "Privacy",
     "terms": "Terms"
+  },
+  "stoicAI": {
+    "badge": "Intelligence · Ancient",
+    "title": "Ask the",
+    "titleHighlight": "Oracle.",
+    "desc": "Have an inner conflict? Speak to the Oracle. Get stoic perspectives and ancient wisdom to calm your inner self.",
+    "inputPlaceholder": "Speak your anxiety here...",
+    "btnAsk": "Ask Oracle",
+    "btnAsking": "Oracle is Meditating...",
+    "error": "Sorry, the Oracle has lost connection with the universe.",
+    "note": "This wisdom is generated by AI (Gemini) for philosophical reflection purposes."
   }
 }

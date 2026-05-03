@@ -6,6 +6,7 @@ import Manifesto from "@/components/Manifesto";
 import News from "@/components/News";
 import LeadMagnet from "@/components/LeadMagnet";
 import AudioLeadMagnet from "@/components/AudioLeadMagnet";
+import StoicAI from "@/components/StoicAI";
 import Footer from "@/components/Footer";
 import { getDictionary } from "@/i18n/get-dictionary";
 import type { Locale } from "@/i18n/config";
@@ -26,6 +27,7 @@ export default async function Home({ params }: Props) {
       <Services dict={dict.services} />
       <Manifesto dict={dict.manifesto} />
       <News dict={dict.news} />
+      <StoicAI dict={dict.stoicAI} lang={resolvedParams.lang} />
       <LeadMagnet dict={dict.leadMagnet} />
       <AudioLeadMagnet dict={dict.audioLeadMagnet} />
       <Footer dict={dict.footer} />

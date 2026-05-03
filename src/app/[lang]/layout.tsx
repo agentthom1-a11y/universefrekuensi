@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import { i18n, type Locale } from "@/i18n/config";
+import { i18n } from "@/i18n/config";
 
 type Props = {
   children: React.ReactNode;

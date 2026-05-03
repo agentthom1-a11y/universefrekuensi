@@ -2,7 +2,9 @@
 
 import { motion } from "motion/react";
 
-export default function Footer({ dict }: { dict: any }) {
+import { Dictionary } from "@/types/dictionary";
+
+export default function Footer({ dict }: { dict: Dictionary }) {
   return (
     <footer className="pt-32 pb-12 px-6 bg-brand-dark text-brand-light relative overflow-hidden">
       {/* Neoclassical Entablature (Architrave layered borders) */}
@@ -49,9 +51,10 @@ export default function Footer({ dict }: { dict: any }) {
           
           <h4 className="font-sans font-bold uppercase tracking-[0.2em] mb-8 text-brand-accent text-sm drop-shadow-md">{dict.navTitle}</h4>
           <ul className="space-y-5 font-serif text-brand-light/70 text-lg">
-            <li><a href="#" className="hover:text-brand-accent hover:tracking-widest transition-all duration-300">{dict.nav1}</a></li>
+            <li><a href="#manifesto" className="hover:text-brand-accent hover:tracking-widest transition-all duration-300">{dict.nav1}</a></li>
             <li><a href="#services" className="hover:text-brand-accent hover:tracking-widest transition-all duration-300">{dict.nav2}</a></li>
             <li><a href="#news" className="hover:text-brand-accent hover:tracking-widest transition-all duration-300">{dict.nav3}</a></li>
+            <li><a href="#stoic-ai" className="text-brand-accent font-bold hover:tracking-widest transition-all duration-300">Stoic Oracle</a></li>
           </ul>
         </motion.div>
         
