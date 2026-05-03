@@ -6,9 +6,9 @@ import { useRef } from "react";
 
 import Image from "next/image";
 
-import { Dictionary } from "@/types/dictionary";
+import { HeroDictionary } from "@/types/dictionary";
 
-export default function Hero({ dict }: { dict: Dictionary }) {
+export default function Hero({ dict }: { dict: HeroDictionary }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,

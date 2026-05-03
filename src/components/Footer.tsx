@@ -2,9 +2,9 @@
 
 import { motion } from "motion/react";
 
-import { Dictionary } from "@/types/dictionary";
+import { FooterDictionary } from "@/types/dictionary";
 
-export default function Footer({ dict }: { dict: Dictionary }) {
+export default function Footer({ dict }: { dict: FooterDictionary }) {
   return (
     <footer className="pt-32 pb-12 px-6 bg-brand-dark text-brand-light relative overflow-hidden">
       {/* Neoclassical Entablature (Architrave layered borders) */}

@@ -1,5 +1,3 @@
-export type Dictionary = Record<string, unknown>;
-
 export interface Article {
   id: number;
   title: string;
@@ -8,6 +6,45 @@ export interface Article {
   desc: string;
   content: string[];
   footer: string;
+}
+
+export interface NavbarDictionary {
+  manifesto: string;
+  services: string;
+  news: string;
+  cta: string;
+}
+
+export interface HeroDictionary {
+  badge: string;
+  title1: string;
+  title2: string;
+  title3: string;
+  title4: string;
+  cta: string;
+}
+
+export interface StatsDictionary {
+  stat1: string;
+  stat2: string;
+  stat3: string;
+  stat4: string;
+}
+
+export interface ServicesDictionary {
+  title: string;
+  titleHighlight: string;
+  desc: string;
+  srv1Title: string;
+  srv1Desc: string;
+  srv2Title: string;
+  srv2Desc: string;
+  srv3Title: string;
+  srv3Desc: string;
+}
+
+export interface ManifestoDictionary {
+  title: string;
 }
 
 export interface NewsDictionary {
@@ -60,4 +97,32 @@ export interface StoicAIDictionary {
   btnAsking: string;
   error: string;
   note: string;
+}
+
+export interface FooterDictionary {
+  desc: string;
+  navTitle: string;
+  nav1: string;
+  nav2: string;
+  nav3: string;
+  connTitle: string;
+  conn1: string;
+  conn2: string;
+  conn3: string;
+  copyright: string;
+  privacy: string;
+  terms: string;
+}
+
+export interface Dictionary {
+  nav: NavbarDictionary;
+  hero: HeroDictionary;
+  stats: StatsDictionary;
+  services: ServicesDictionary;
+  manifesto: ManifestoDictionary;
+  news: NewsDictionary;
+  leadMagnet: LeadMagnetDictionary;
+  audioLeadMagnet: LeadMagnetDictionary;
+  footer: FooterDictionary;
+  stoicAI: StoicAIDictionary;
 }

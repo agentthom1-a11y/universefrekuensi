@@ -4,9 +4,9 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import Image from "next/image";
 
-import { Dictionary } from "@/types/dictionary";
+import { ManifestoDictionary } from "@/types/dictionary";
 
-export default function Manifesto({ dict }: { dict: Dictionary }) {
+export default function Manifesto({ dict }: { dict: ManifestoDictionary }) {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,

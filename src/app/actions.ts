@@ -1,12 +1,14 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import { GoogleGenerativeAI } from '@google/genai';
+import { GoogleGenAI } from '@google/genai';
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GENERATIVE_AI_API_KEY || '');
+const ai = new GoogleGenAI({
+  apiKey: process.env.GOOGLE_GENERATIVE_AI_API_KEY || '',
+});
 
 
-export async function subscribeToNewsletter(formData: FormData) {
+export async function subscribeToNewsletter(_prevState: unknown, formData: FormData) {
   const email = formData.get('email');
   
   if (!email || typeof email !== 'string') {
@@ -20,7 +22,7 @@ export async function subscribeToNewsletter(formData: FormData) {
   return { success: true };
 }
 
-export async function claimLeadMagnet(formData: FormData) {
+export async function claimLeadMagnet(_prevState: unknown, formData: FormData) {
   const email = formData.get('email');
   const type = formData.get('type') || 'journal'; // 'journal' or 'audio'
 
@@ -45,17 +47,21 @@ export async function askOracle(_prevState: unknown, formData: FormData) {
   }
 
   try {
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.0-flash' });
-    
     const systemPrompt = lang === 'en' 
       ? "You are a Stoic Oracle at Universe Frekuensi. Provide wise, calm, and practical stoic advice (Marcus Aurelius, Seneca, Epictetus style) to the user's problem. Keep it poetic but grounded. Maximum 3 paragraphs. Respond in English."
       : "Anda adalah Oracle Stoik di Universe Frekuensi. Berikan nasihat stoikisme yang bijak, tenang, dan praktis (gaya Marcus Aurelius, Seneca, Epictetus) untuk masalah pengguna. Buatlah puitis namun tetap membumi. Maksimal 3 paragraf. Jawab dalam Bahasa Indonesia.";
 
-    const result = await model.generateContent([systemPrompt, query]);
-    const response = await result.response;
-    const text = response.text();
+    const result = await ai.models.generateContent({
+      model: 'gemini-2.0-flash',
+      contents: query,
+      config: {
+        systemInstruction: systemPrompt,
+      },
+    });
+    
+    const text = result.text;
 
-    return { success: true, answer: text };
+    return { success: true, answer: text || 'The Oracle is silent...' };
   } catch (error) {
     console.error('AI Error:', error);
     return { error: 'Failed to connect to Oracle' };

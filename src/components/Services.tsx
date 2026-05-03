@@ -3,9 +3,9 @@
 import { motion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
 
-import { Dictionary } from "@/types/dictionary";
+import { ServicesDictionary } from "@/types/dictionary";
 
-export default function Services({ dict }: { dict: Dictionary }) {
+export default function Services({ dict }: { dict: ServicesDictionary }) {
   const services = [
     { title: dict.srv1Title, desc: dict.srv1Desc },
     { title: dict.srv2Title, desc: dict.srv2Desc },

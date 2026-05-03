@@ -4,9 +4,9 @@ import { motion } from "motion/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { Dictionary } from "@/types/dictionary";
+import { NavbarDictionary } from "@/types/dictionary";
 
-export default function Navbar({ dict }: { dict: Dictionary }) {
+export default function Navbar({ dict }: { dict: NavbarDictionary }) {
   const pathname = usePathname();
   const currentLang = pathname?.split('/')[1] === 'en' ? 'en' : 'id';
   const targetLang = currentLang === 'en' ? 'id' : 'en';

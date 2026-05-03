@@ -2,9 +2,9 @@
 
 import { motion } from "motion/react";
 
-import { Dictionary } from "@/types/dictionary";
+import { StatsDictionary } from "@/types/dictionary";
 
-export default function Stats({ dict }: { dict: Dictionary }) {
+export default function Stats({ dict }: { dict: StatsDictionary }) {
   const stats = [
     { label: dict.stat1, value: "10k+" },
     { label: dict.stat2, value: "100+" },
