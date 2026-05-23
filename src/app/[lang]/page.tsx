@@ -6,6 +6,7 @@ import Manifesto from "@/components/Manifesto";
 import News from "@/components/News";
 import LeadMagnet from "@/components/LeadMagnet";
 import AudioLeadMagnet from "@/components/AudioLeadMagnet";
+import AetherProduct from "@/components/AetherProduct";
 import StoicAI from "@/components/StoicAI";
 import Footer from "@/components/Footer";
 import { getDictionary } from "@/i18n/get-dictionary";
@@ -30,6 +31,7 @@ export default async function Home({ params }: Props) {
       <StoicAI dict={dict.stoicAI} lang={resolvedParams.lang} />
       <LeadMagnet dict={dict.leadMagnet} />
       <AudioLeadMagnet dict={dict.audioLeadMagnet} />
+      <AetherProduct dict={dict.aetherProduct} />
       <Footer dict={dict.footer} />
     </main>
   );

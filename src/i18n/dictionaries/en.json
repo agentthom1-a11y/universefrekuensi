@@ -145,6 +145,18 @@
     "spamDesc": "Lossless Audio Quality. Instant Download.",
     "successMsg": "We have sent access to your email. See you in your meditation space."
   },
+  "aetherProduct": {
+    "badge": "Premium · Sanctuary",
+    "title": "Aether Quiet",
+    "titleHighlight": "Ritual.",
+    "desc": "A scientifically-backed auditory architecture designed to bypass mental resistance, inducing profound comfort and immediate deep focus. Your personal sanctuary, accessible on demand.",
+    "feature1": "Neuro-Acoustic Calibration",
+    "feature2": "Deep Theta Immersion",
+    "ctaTitle": "Acquire The Ritual",
+    "ctaDesc": "Invest in your most valuable asset: your absolute peace of mind. Experience the premium auditory sanctuary.",
+    "btnAcquire": "Secure Access Now",
+    "spamDesc": "High-Fidelity Audio. Lifetime Access."
+  },
   "footer": {
     "desc": "Tranquility is an authentic luxury. Rediscover clarity of mind like ancient philosophers.",
     "navTitle": "Navigation",

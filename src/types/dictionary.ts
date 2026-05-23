@@ -114,6 +114,19 @@ export interface FooterDictionary {
   terms: string;
 }
 
+export interface AetherProductDictionary {
+  badge: string;
+  title: string;
+  titleHighlight: string;
+  desc: string;
+  feature1: string;
+  feature2: string;
+  ctaTitle: string;
+  ctaDesc: string;
+  btnAcquire: string;
+  spamDesc: string;
+}
+
 export interface Dictionary {
   nav: NavbarDictionary;
   hero: HeroDictionary;
@@ -123,6 +136,7 @@ export interface Dictionary {
   news: NewsDictionary;
   leadMagnet: LeadMagnetDictionary;
   audioLeadMagnet: LeadMagnetDictionary;
+  aetherProduct: AetherProductDictionary;
   footer: FooterDictionary;
   stoicAI: StoicAIDictionary;
 }
