@@ -3,7 +3,8 @@
     "manifesto": "Manifesto",
     "services": "Pilar Kami",
     "news": "Jurnal",
-    "cta": "Mulai Sekarang"
+    "cta": "Mulai Sekarang",
+    "rituals": "Ritual"
   },
   "hero": {
     "badge": "Filosofi & Ruang Nyaman",
@@ -163,6 +164,7 @@
     "nav1": "Manifesto",
     "nav2": "Pilar Kami",
     "nav3": "Jurnal Praktik",
+    "nav4": "Pustaka Ritual",
     "connTitle": "Koneksi",
     "conn1": "Instagram",
     "conn2": "LinkedIn",
@@ -181,5 +183,13 @@
     "btnAsking": "Oracle Sedang Merenung...",
     "error": "Maaf, Oracle sedang kehilangan koneksi dengan semesta.",
     "note": "Kebijaksanaan ini dihasilkan oleh AI (Gemini) untuk tujuan refleksi filosofis."
+  },
+  "rituals": {
+    "sectionBadge": "Kalibrasi Pikiran",
+    "sectionTitle": "Sinyal",
+    "sectionHighlight": "Ritual.",
+    "sectionDesc": "Melangkah keluar dari kebisingan batin. Gunakan skrip keheningan interaktif kami untuk menyelaraskan pikiran dan grounding selangkah demi selangkah.",
+    "viewAll": "Lihat Semua Ritual",
+    "enterRitual": "Mulai Ritual"
   }
 }

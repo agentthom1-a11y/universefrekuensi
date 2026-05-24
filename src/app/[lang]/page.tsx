@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Stats from "@/components/Stats";
 import Services from "@/components/Services";
+import RitualsSection from "@/components/RitualsSection";
 import Manifesto from "@/components/Manifesto";
 import News from "@/components/News";
 import LeadMagnet from "@/components/LeadMagnet";
@@ -26,6 +27,7 @@ export default async function Home({ params }: Props) {
       <Hero dict={dict.hero} />
       <Stats dict={dict.stats} />
       <Services dict={dict.services} />
+      <RitualsSection lang={resolvedParams.lang} dict={dict.rituals} />
       <Manifesto dict={dict.manifesto} />
       <News dict={dict.news} />
       <StoicAI dict={dict.stoicAI} lang={resolvedParams.lang} />

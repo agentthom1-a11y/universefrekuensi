@@ -13,6 +13,7 @@ export interface NavbarDictionary {
   services: string;
   news: string;
   cta: string;
+  rituals?: string;
 }
 
 export interface HeroDictionary {
@@ -105,6 +106,7 @@ export interface FooterDictionary {
   nav1: string;
   nav2: string;
   nav3: string;
+  nav4?: string;
   connTitle: string;
   conn1: string;
   conn2: string;
@@ -140,3 +142,35 @@ export interface Dictionary {
   footer: FooterDictionary;
   stoicAI: StoicAIDictionary;
 }
+
+export interface RitualSection {
+  heading: string;
+  body: string;
+}
+
+export interface RitualLanguageFields {
+  title: string;
+  subtitle: string;
+  summary: string;
+  description: string;
+  sections: RitualSection[];
+  ritual_steps: string[];
+  affirmation: string;
+  cta: string;
+}
+
+export interface Ritual {
+  id: string;
+  type: string;
+  status: string;
+  slug: string;
+  cover_prompt: string;
+  thumbnail_prompt: string;
+  cover_img: string;
+  thumbnail_img: string;
+  tags: string[];
+  seo_keywords: string[];
+  en: RitualLanguageFields;
+  id_lang: RitualLanguageFields;
+}
+
