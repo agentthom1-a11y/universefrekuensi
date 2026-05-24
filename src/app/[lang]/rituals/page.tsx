@@ -34,8 +34,23 @@ export default async function RitualsListPage({ params }: Props) {
     ? "Quiet signals to slow down, align your mind, and return to your center."
     : "Sinyal hening untuk melambat, menyelaraskan pikiran, dan kembali ke pusat diri.";
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: ritualsData.map((ritual, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `${process.env.NEXT_PUBLIC_APP_URL || 'https://universefrekuensi.com'}/${lang}/rituals/${ritual.slug}`,
+      name: lang === 'en' ? ritual.en.title : ritual.id_lang.title,
+    })),
+  };
+
   return (
     <main className="min-h-screen bg-brand-dark text-brand-light selection:bg-brand-accent selection:text-brand-dark pb-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar dict={dict.nav} />
 
       {/* Decorative vertical lines */}

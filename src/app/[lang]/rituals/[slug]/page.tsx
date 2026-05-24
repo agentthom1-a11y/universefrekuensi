@@ -42,7 +42,25 @@ export async function generateMetadata({ params }: Props) {
     title: `${fields.title} | Universe Frekuensi`,
     description: fields.summary,
     keywords: ritual.seo_keywords,
+    alternates: {
+      canonical: `/${lang}/rituals/${slug}`,
+    },
     openGraph: {
+      title: `${fields.title} | Universe Frekuensi`,
+      description: fields.summary,
+      url: `/${lang}/rituals/${slug}`,
+      images: [
+        {
+          url: ritual.cover_img,
+          width: 1280,
+          height: 720,
+          alt: fields.title,
+        }
+      ],
+      type: 'article',
+    },
+    twitter: {
+      card: 'summary_large_image',
       title: `${fields.title} | Universe Frekuensi`,
       description: fields.summary,
       images: [ritual.cover_img],
@@ -61,6 +79,50 @@ export default async function RitualDetailPage({ params }: Props) {
   if (!ritual || ritual.status !== 'published') {
     notFound();
   }
+
+  const fields = lang === 'en' ? ritual.en : ritual.id_lang;
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://universefrekuensi.com';
+  const url = `${baseUrl}/${lang}/rituals/${slug}`;
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${baseUrl}/${lang}`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: lang === 'en' ? 'Rituals' : 'Ritual',
+            item: `${baseUrl}/${lang}/rituals`,
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: fields.title,
+            item: url,
+          },
+        ],
+      },
+      {
+        '@type': 'HowTo',
+        name: fields.title,
+        description: fields.description,
+        image: `${baseUrl}${ritual.cover_img}`,
+        step: fields.ritual_steps.map((step, index) => ({
+          '@type': 'HowToStep',
+          position: index + 1,
+          text: step,
+        })),
+      }
+    ]
+  };
 
   // Custom dictionary strings for Ritual Player
   const playerDict = lang === 'en' ? {
@@ -87,6 +149,10 @@ export default async function RitualDetailPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-brand-dark text-brand-light selection:bg-brand-accent selection:text-brand-dark pb-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navbar dict={dict.nav} />
       
       {/* Background Motifs */}
