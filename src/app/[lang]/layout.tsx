@@ -75,6 +75,11 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
         'max-snippet': -1,
       },
     },
+    icons: {
+      icon: '/logo.jpeg',
+      shortcut: '/logo.jpeg',
+      apple: '/logo.jpeg',
+    },
     category: 'lifestyle',
   };
 }
