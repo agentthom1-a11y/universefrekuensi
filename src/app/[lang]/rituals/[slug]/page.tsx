@@ -135,6 +135,7 @@ export default async function RitualDetailPage({ params }: Props) {
     completeTitle: "Calibration Completed",
     completeDesc: "Your frequency has settled. Carry this quiet with you. To expand this state, you can explore the premium Aether Quiet Ritual.",
     resetRitual: "Repeat Ritual",
+    ctaPremiumProduct: "Explore the Aether Science",
   } : {
     backToList: "Kembali ke Pustaka Ritual",
     backToHome: "Kembali ke Beranda",
@@ -145,6 +146,7 @@ export default async function RitualDetailPage({ params }: Props) {
     completeTitle: "Kalibrasi Selesai",
     completeDesc: "Sinyal Anda telah selaras. Bawa keheningan ini dalam hari Anda. Untuk memperdalam kondisi ini, Anda dapat menjelajahi Aether Quiet Ritual premium.",
     resetRitual: "Ulangi Ritual",
+    ctaPremiumProduct: "Pelajari Sains Aether",
   };
 
   return (

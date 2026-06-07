@@ -23,6 +23,10 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-sans tracking-tight;
   }
+
+  section[id] {
+    scroll-margin-top: 100px;
+  }
 }
 
 /* Cosmic-Soft Glitch Animation */

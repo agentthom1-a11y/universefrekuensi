@@ -18,7 +18,7 @@ export default function LeadMagnet({ dict }: { dict: LeadMagnetDictionary }) {
       <div className="flex flex-col lg:flex-row min-h-[70vh]">
         
         {/* Left Side: Pitch (Dark & Confident) */}
-        <div className="flex-1 bg-brand-dark text-brand-light p-12 md:p-24 flex flex-col justify-center relative overflow-hidden">
+        <div className="flex-1 bg-brand-dark text-brand-light px-6 py-16 md:px-12 md:py-20 lg:px-16 xl:px-20 2xl:px-24 flex flex-col justify-center relative overflow-hidden">
           {/* Vertical rail text */}
           <div className="absolute left-6 top-12 bottom-12 hidden md:flex items-center">
             <span className="font-sans font-bold text-xs uppercase tracking-[0.15em] text-brand-light/30" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
@@ -33,7 +33,7 @@ export default function LeadMagnet({ dict }: { dict: LeadMagnetDictionary }) {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="md:pl-12 max-w-2xl relative z-10"
           >
-            <h2 className="text-6xl md:text-[80px] lg:text-[112px] font-serif font-bold tracking-tighter leading-[0.85] uppercase mb-8">
+            <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-[72px] xl:text-[84px] 2xl:text-[104px] font-serif font-bold tracking-tighter leading-[1.05] uppercase mb-8">
               {dict.title} <br/> <span className="text-brand-accent">{dict.titleHighlight}</span>
             </h2>
             <p className="text-xl md:text-2xl font-light text-brand-light/70 max-w-lg mb-8 leading-relaxed">
@@ -53,7 +53,7 @@ export default function LeadMagnet({ dict }: { dict: LeadMagnetDictionary }) {
         </div>
 
         {/* Right Side: Action (Light & Forms) */}
-        <div className="flex-1 bg-brand-light p-12 md:p-24 flex flex-col justify-center items-center lg:items-start relative">
+        <div className="flex-1 bg-brand-light px-6 py-16 md:px-12 md:py-20 lg:px-16 xl:px-20 2xl:px-24 flex flex-col justify-center items-center lg:items-start relative">
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}

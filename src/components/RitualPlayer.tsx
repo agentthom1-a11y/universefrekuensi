@@ -20,6 +20,7 @@ interface RitualPlayerProps {
     completeTitle: string;
     completeDesc: string;
     resetRitual: string;
+    ctaPremiumProduct: string;
   };
 }
 
@@ -227,7 +228,7 @@ export default function RitualPlayer({ ritual, lang, dict }: RitualPlayerProps) 
                       rel="noopener noreferrer"
                       className="w-full sm:w-auto px-8 py-4 bg-brand-accent text-brand-dark font-serif font-bold uppercase tracking-widest text-xs hover:bg-brand-light transition-all flex items-center justify-center gap-2 group shadow-lg shadow-brand-accent/10"
                     >
-                      <span>{fields.cta}</span>
+                      <span>{dict.ctaPremiumProduct}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
 

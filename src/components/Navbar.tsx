@@ -1,8 +1,10 @@
 'use client';
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 import { NavbarDictionary } from "@/types/dictionary";
 
@@ -10,6 +12,7 @@ export default function Navbar({ dict }: { dict: NavbarDictionary }) {
   const pathname = usePathname();
   const currentLang = pathname?.split('/')[1] === 'en' ? 'en' : 'id';
   const targetLang = currentLang === 'en' ? 'id' : 'en';
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   const redirectedPathName = (locale: string) => {
     if (!pathname) return '/';
@@ -47,8 +50,64 @@ export default function Navbar({ dict }: { dict: NavbarDictionary }) {
           <Link href={`/${currentLang}#lead-magnet`} className="px-6 py-3 bg-brand-dark text-brand-accent rounded-full text-sm font-bold uppercase tracking-wide hover:bg-brand-accent hover:text-brand-dark transition-all hidden md:block">
             {dict.cta}
           </Link>
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
+            className="md:hidden p-2 text-brand-dark hover:text-brand-accent transition-colors focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Drawer */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="md:hidden absolute top-full left-0 w-full bg-brand-light/95 backdrop-blur-md border-b border-brand-dark/10 px-6 py-8 flex flex-col space-y-6 shadow-xl overflow-hidden"
+          >
+            <Link 
+              href={`/${currentLang}#manifesto`} 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-semibold uppercase tracking-wide text-brand-dark hover:text-brand-accent transition-colors"
+            >
+              {dict.manifesto}
+            </Link>
+            <Link 
+              href={`/${currentLang}#services`} 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-semibold uppercase tracking-wide text-brand-dark hover:text-brand-accent transition-colors"
+            >
+              {dict.services}
+            </Link>
+            <Link 
+              href={`/${currentLang}#news`} 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-semibold uppercase tracking-wide text-brand-dark hover:text-brand-accent transition-colors"
+            >
+              {dict.news}
+            </Link>
+            <Link 
+              href={`/${currentLang}/rituals`} 
+              onClick={() => setMobileMenuOpen(false)}
+              className="text-lg font-semibold uppercase tracking-wide text-brand-dark hover:text-brand-accent transition-colors"
+            >
+              {dict.rituals || (currentLang === 'en' ? "Rituals" : "Ritual")}
+            </Link>
+            <Link 
+              href={`/${currentLang}#lead-magnet`} 
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-6 py-4 bg-brand-dark text-brand-accent rounded-full text-center text-sm font-bold uppercase tracking-wide hover:bg-brand-accent hover:text-brand-dark transition-all"
+            >
+              {dict.cta}
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 }
